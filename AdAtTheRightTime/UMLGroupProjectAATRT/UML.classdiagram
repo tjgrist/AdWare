@@ -54,6 +54,20 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="e7ee4c0b-fbf7-4f64-82b7-7dd6be2866f8" name="Profile MVC" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="f5344ae4-94d1-4d06-a6d2-b36623868940" />
+        <ownedAttributesInternal>
+          <property Id="bf8b1e79-6dc2-479c-bc3a-96c0ab5c06d7" name="Consumer list page for business user" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e66b0d71-3c73-4dfc-b711-48c1ff1a5a92" />
+          </property>
+          <property Id="dd17dd8b-4866-4fee-ac64-32c60c7db42a" name="data view page" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="99398634-e1cc-4ba7-ad3f-a09710005b62" />
+          </property>
+          <property Id="93ea3d6c-52a5-4581-b7c9-310cb7ba9ddd" name="google calendar page" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1ed620dd-a988-44a7-aea9-bb8399fbd67e" />
+          </property>
+          <property Id="fc457660-d1ab-44b4-8897-4512104293c0" name="Settings page" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ff1f8112-6e20-4eeb-a808-2d86084d0b66" />
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -110,6 +124,31 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="eb2ecfc8-8c85-4594-a04b-6065e9fd3118" name="Landing" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="1c9f95e3-c066-4774-a26f-f1d334bfb681" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7d78bebf-e298-42fa-9ede-815b50fa0fa3" name="Social media posting page" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7ad3cdb6-d55f-4f63-8295-e4a948c9a209" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ca894e9a-6e3d-4c4a-bd5e-41028c65ebaf" name="Consumer list" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a4e218b7-67ae-4c46-8b14-9567c07b7a5d" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="75d1d49f-6979-4979-b062-ff71673291d4" name="Registration" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bc1658aa-cf30-4faf-bd9a-16d9a41f256f" />
+        <ownedAttributesInternal>
+          <property Id="ee616bbe-06db-4813-9579-07a384df70d4" name="Choose a role" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="08bacf61-983f-48ad-88f7-30261c7bd121" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="91ee0143-9e0d-4595-867f-fdb40bd1a8f1" name="If role is business, send to profile" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cb632294-5bc2-4a1b-a59d-7c6f7708646b" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>

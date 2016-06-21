@@ -170,12 +170,21 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201606211424421_initial.cs" />
     <Compile Include="Migrations\201606211424421_initial.Designer.cs">
       <DependentUpon>201606211424421_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606211555566_added user roles.cs" />
+    <Compile Include="Migrations\201606211555566_added user roles.Designer.cs">
+      <DependentUpon>201606211555566_added user roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606211620042_roles.cs" />
+    <Compile Include="Migrations\201606211620042_roles.Designer.cs">
+      <DependentUpon>201606211620042_roles.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -239,6 +248,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,6 +264,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606211424421_initial.resx">
       <DependentUpon>201606211424421_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606211555566_added user roles.resx">
+      <DependentUpon>201606211555566_added user roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606211620042_roles.resx">
+      <DependentUpon>201606211620042_roles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
