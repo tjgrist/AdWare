@@ -206,18 +206,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606211424421_initial.cs" />
-    <Compile Include="Migrations\201606211424421_initial.Designer.cs">
-      <DependentUpon>201606211424421_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606211555566_added user roles.cs" />
-    <Compile Include="Migrations\201606211555566_added user roles.Designer.cs">
-      <DependentUpon>201606211555566_added user roles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606211620042_roles.cs" />
-    <Compile Include="Migrations\201606211620042_roles.Designer.cs">
-      <DependentUpon>201606211620042_roles.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -308,17 +296,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606211424421_initial.resx">
-      <DependentUpon>201606211424421_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606211555566_added user roles.resx">
-      <DependentUpon>201606211555566_added user roles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606211620042_roles.resx">
-      <DependentUpon>201606211620042_roles.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
