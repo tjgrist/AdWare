@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="1f4a9109-24cb-4b80-b46b-84bd9ef525fc" name="UML" linkedPackageId="e8d2cc06-4220-4703-92d6-94b9531ad034" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="e816b4a3-6a52-4df3-91ab-a8d80e5131e2">
+      <elementDefinition Id="26a1f8fa-6666-4774-8c4c-d2b16b91abc4" />
+      <body>APIs
+</body>
+    </comment>
+    <comment Id="6af88ff5-51a1-4f85-9473-4f52c95b5912">
+      <elementDefinition Id="7b25b55c-bc41-4193-829a-1ecc1b776c52" />
+      <body>User Roles: Businesses, consumers</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="651068b7-1831-4911-84ce-ada5f798fbec">
+      <profileInstance Id="c857d0de-a18b-460e-bbd7-5b09af7f6396" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="6321fac0-3db8-4b12-b9e4-291c34f91b41">
+      <profileInstance Id="745c39b4-1e59-4a54-bf24-5b5d061ccd76" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fc21fecb-d7ad-49dd-a7f9-7e4bd7863f69" name="SalesForce" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e53df5e8-3ca6-4066-a72a-ba8819e1fa6e" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="632ae587-d617-48b0-87db-965661df1955" name="Google Trends MVC" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="13a5507a-6eee-4116-ae4c-47b218aeb9db" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="298499e6-ffed-4728-ac9d-af6c3a15f5ea" name="Facebook" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="94e3effc-3795-4c70-bbb5-21019d80a8e5" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="783b7da0-7ba9-42b6-a2f3-21ee3e234d5c" name="Google Calendar" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="af6e30ca-5a7e-4fa4-bd2a-a3bba51fcf0c" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2f721515-88a5-4946-9f16-48047f977767" name="Email Notifications" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="843c2453-dbd8-455a-a6bc-4ed7115919cd" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e7ee4c0b-fbf7-4f64-82b7-7dd6be2866f8" name="Profile MVC" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f5344ae4-94d1-4d06-a6d2-b36623868940" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0d2a5960-647a-420b-bfda-e2476af5f64e" name="Mobile Application" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0237bb3e-5e51-4874-ac28-26cee9ea917f" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8aea1b88-2b41-4cde-a82c-3c1c68eecf21" name="Instagram" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cf316b80-0abb-493d-8d72-6f562699f12f" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a50890b2-4d88-4cd9-aded-c5d65ca6ad24" name="Twitter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="badc4ef7-ab2f-4966-8f0e-37d9e0aff40f" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9e4d0d3a-c056-486d-abc1-978c907901a1" name="Data View Page " isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f7a29785-a7c4-40ef-9f25-e0374002fc64" />
+        <ownedAttributesInternal>
+          <property Id="a2bad60f-62a4-41e4-846a-5a6cc4992c13" name="SalesForce API" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5209dc05-5f1b-4841-8d45-00f96df125ea" />
+          </property>
+          <property Id="ce3d87be-07af-4f5a-a68c-356d04d70585" name="Google Trends API" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4f399f27-3c7c-4db6-a1a3-0c22dd49dea6" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="aae188e9-68cf-4086-b3fe-05e712023559" name="Google Calendar" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ab0790da-6153-4d05-aa96-494dd4736307" />
+        <ownedAttributesInternal>
+          <property Id="ef5097ee-e709-4521-80cd-08cadd4d178f" name="View of google cal that includes local events" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6f5a2435-d7b9-45b5-b3af-ece5509aa44f" />
+          </property>
+          <property Id="5fa7904e-2197-4077-9032-554f21d5b13b" name="Google cal also shows suggested ad days" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3d71474c-271e-419f-a15b-3b75466ae709" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a464498e-5b6f-4df4-ab6c-19d87c3577cb" name="Settings MVC" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d33061e4-b903-4994-b7c7-dd37a1dc2220" />
+        <ownedAttributesInternal>
+          <property Id="c3bc60af-fcce-4e10-a782-758b04a98aee" name="Google Trends query ability" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5fad8e62-5573-412b-af21-260746de5e2b" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="eb2ecfc8-8c85-4594-a04b-6065e9fd3118" name="Landing" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1c9f95e3-c066-4774-a26f-f1d334bfb681" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="e8d2cc06-4220-4703-92d6-94b9531ad034" name="UMLGroupProjectAATRT">
+    <elementDefinition Id="f5601ef5-1b3e-4cc6-ae95-5db957c00c1a" />
+  </package>
+</logicalClassDesignerModel>
