@@ -52,80 +52,13 @@ namespace AdAtTheRightTime.Controllers
                     return RedirectToAction("ManagerView", "Businesses");
                 default:
                     return RedirectToAction("UserView", "Users");
-
-
             }
-
         }
-        //public ActionResult ViewStats()
-        //{
-
-        //}
-
-        // GET: Profiles/Create
-        public ActionResult Create()
+        public ActionResult AddBusinesses()
         {
+            ViewBag.Name = new SelectList(db.Businesses.Distinct().ToList(), "Name", "Name");
             return View();
         }
-
-        // POST: Profiles/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Profiles/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Profiles/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Profiles/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Profiles/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
     }
 }
