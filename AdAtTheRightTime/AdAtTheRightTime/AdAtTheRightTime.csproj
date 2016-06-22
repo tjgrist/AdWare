@@ -199,7 +199,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BusinessesController.cs" />
-    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -212,21 +211,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606212214137_initial.cs" />
-    <Compile Include="Migrations\201606212214137_initial.Designer.cs">
-      <DependentUpon>201606212214137_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606212233568_changed to nullable business id.cs" />
-    <Compile Include="Migrations\201606212233568_changed to nullable business id.Designer.cs">
-      <DependentUpon>201606212233568_changed to nullable business id.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606221653297_tuesday.cs" />
-    <Compile Include="Migrations\201606221653297_tuesday.Designer.cs">
-      <DependentUpon>201606221653297_tuesday.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
-    <Compile Include="Models\OrderViewModel.cs" />
+    <Compile Include="Models\SaleViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -309,12 +295,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Sales\Index.cshtml" />
     <Content Include="Views\Businesses\Index.cshtml" />
     <Content Include="Views\Businesses\Create.cshtml" />
     <Content Include="Views\Users\UserView.cshtml" />
     <Content Include="Views\Businesses\Edit.cshtml" />
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -323,17 +308,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606212214137_initial.resx">
-      <DependentUpon>201606212214137_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606212233568_changed to nullable business id.resx">
-      <DependentUpon>201606212233568_changed to nullable business id.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606221653297_tuesday.resx">
-      <DependentUpon>201606221653297_tuesday.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

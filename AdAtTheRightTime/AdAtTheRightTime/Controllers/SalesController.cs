@@ -4,17 +4,24 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Salesforce.Force;
+using WebApplication9.Models;
 
 namespace AdAtTheRightTime.Controllers
 {
     public class SalesController : Controller
     {
-        // GET: Sales from salesforce data, display in graph form 
-        [Authorize]
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
+            var accessToken = Session["AccessToken"].ToString();
+            var apiVersion = Session["ApiVersion"].ToString();
+            var instanceUrl = Session["InstanceUrl"].ToString();
+
+            var client = new ForceClient(instanceUrl, accessToken, apiVersion);
+            var sales = await client.QueryAsync<SaleViewModel>("SELECT Name, Total__c FROM Sale__c");
             if (User.Identity.IsAuthenticated)
             {
                 var user = User.Identity;
@@ -26,7 +33,7 @@ namespace AdAtTheRightTime.Controllers
                 {
                     ViewBag.isAdmin = "Yes";
                 }
-                return View();
+                return View(sales.records);
             }
             else
             {
