@@ -140,7 +140,8 @@ namespace AdAtTheRightTime.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.Name = new SelectList(db.Roles.Where(x => !x.Name.Contains("Super Admin")).ToList(), "Name", "Name");
+            var query = db.Roles.Where(x => !x.Name.Contains("Manager"));
+            ViewBag.Name = new SelectList(query.Where(x => !x.Name.Contains("Super Admin")).ToList(), "Name", "Name");
             return View();
         }
 
@@ -153,7 +154,7 @@ namespace AdAtTheRightTime.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, BusinessId = null};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -167,7 +168,8 @@ namespace AdAtTheRightTime.Controllers
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                     return RedirectToAction("Index", "Users");
                 }
-                ViewBag.Name = new SelectList(db.Roles.Where(x => !x.Name.Contains("Super Admin")).ToList(), "Name", "Name");
+                var query = db.Roles.Where(x => !x.Name.Contains("Manager"));
+                ViewBag.Name = new SelectList(query.Where(x => !x.Name.Contains("Super Admin")).ToList(), "Name", "Name");
                 AddErrors(result);
             }
 

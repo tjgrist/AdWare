@@ -199,30 +199,38 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\BusinessesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\QueriesController.cs" />
+    <Compile Include="Controllers\RelationshipsController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606211424421_initial.cs" />
-    <Compile Include="Migrations\201606211424421_initial.Designer.cs">
-      <DependentUpon>201606211424421_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201606212214137_initial.cs" />
+    <Compile Include="Migrations\201606212214137_initial.Designer.cs">
+      <DependentUpon>201606212214137_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606211555566_added user roles.cs" />
-    <Compile Include="Migrations\201606211555566_added user roles.Designer.cs">
-      <DependentUpon>201606211555566_added user roles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606211620042_roles.cs" />
-    <Compile Include="Migrations\201606211620042_roles.Designer.cs">
-      <DependentUpon>201606211620042_roles.cs</DependentUpon>
+    <Compile Include="Migrations\201606212233568_changed to nullable business id.cs" />
+    <Compile Include="Migrations\201606212233568_changed to nullable business id.Designer.cs">
+      <DependentUpon>201606212233568_changed to nullable business id.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\SaleViewModel.cs" />
+=======
+    <Compile Include="Models\Business.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
+>>>>>>> 7c3b60538ef06abe6e247e3edc227e071df8bedd
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Query.cs" />
+    <Compile Include="Models\Relationships.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Interfaces\DataFormat.cs" />
@@ -310,14 +318,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606211424421_initial.resx">
-      <DependentUpon>201606211424421_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606212214137_initial.resx">
+      <DependentUpon>201606212214137_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606211555566_added user roles.resx">
-      <DependentUpon>201606211555566_added user roles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606211620042_roles.resx">
-      <DependentUpon>201606211620042_roles.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606212233568_changed to nullable business id.resx">
+      <DependentUpon>201606212233568_changed to nullable business id.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,13 +7,13 @@ namespace AdAtTheRightTime.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class roles : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(roles));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606211620042_roles"; }
+            get { return "201606212214137_initial"; }
         }
         
         string IMigrationMetadata.Source

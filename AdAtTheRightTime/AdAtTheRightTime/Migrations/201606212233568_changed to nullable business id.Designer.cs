@@ -7,13 +7,13 @@ namespace AdAtTheRightTime.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class initial : IMigrationMetadata
+    public sealed partial class changedtonullablebusinessid : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(changedtonullablebusinessid));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606211424421_initial"; }
+            get { return "201606212233568_changed to nullable business id"; }
         }
         
         string IMigrationMetadata.Source
