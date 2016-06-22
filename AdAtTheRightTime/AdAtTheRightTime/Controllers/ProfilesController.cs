@@ -54,6 +54,7 @@ namespace AdAtTheRightTime.Controllers
                     return RedirectToAction("UserView", "Users");
             }
         }
+        [Authorize]
         public ActionResult AddBusinesses()
         {
             ViewBag.Name = new SelectList(db.Businesses.Distinct().ToList(), "Name", "Name");
@@ -62,6 +63,7 @@ namespace AdAtTheRightTime.Controllers
         [HttpPost]
         public ActionResult AddBusinesses(Business business)
         {
+            var currentUser = db.Users.Find(User.Identity.GetUserId());
 
             return View();
         }
