@@ -211,8 +211,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="Migrations\201606212214137_initial.cs" />
     <Compile Include="Migrations\201606212214137_initial.Designer.cs">
       <DependentUpon>201606212214137_initial.cs</DependentUpon>
@@ -226,7 +224,6 @@
       <DependentUpon>201606221653297_tuesday.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
->>>>>>> 78c27719065393a8234b515a9092ba342d404c62
     <Compile Include="Models\Business.cs" />
     <Compile Include="Models\SaleViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
