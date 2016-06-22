@@ -105,12 +105,19 @@ namespace AdAtTheRightTime.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "BusinessId,City,Name,Industry")] Business business)
         {
-            if (ModelState.IsValid)
+            var currentUser = db.Users.Find(User.Identity.GetUserId());
+            if (currentUser.BusinessId == business.BusinessId)
             {
-                db.Entry(business).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Entry(business).State = EntityState.Modified;
+                    db.SaveChanges();
+                    ViewBag.Message = "Registered your business.";
+                    return RedirectToAction("Index");
+                }
+                return View(business);
             }
+            ViewBag.Message = "You cannot edit this business.";
             return View(business);
         }
 
