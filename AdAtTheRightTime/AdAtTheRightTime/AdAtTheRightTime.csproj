@@ -198,7 +198,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\BusinessesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -211,15 +210,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606212214137_initial.cs" />
-    <Compile Include="Migrations\201606212214137_initial.Designer.cs">
-      <DependentUpon>201606212214137_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606212233568_changed to nullable business id.cs" />
-    <Compile Include="Migrations\201606212233568_changed to nullable business id.Designer.cs">
-      <DependentUpon>201606212233568_changed to nullable business id.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Models\SaleViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -314,14 +304,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606212214137_initial.resx">
-      <DependentUpon>201606212214137_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606212233568_changed to nullable business id.resx">
-      <DependentUpon>201606212233568_changed to nullable business id.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
