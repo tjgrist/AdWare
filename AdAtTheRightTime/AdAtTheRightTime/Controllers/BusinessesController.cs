@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AdAtTheRightTime.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace AdAtTheRightTime.Controllers
 {
@@ -36,8 +38,26 @@ namespace AdAtTheRightTime.Controllers
         }
 
         // GET: Businesses/Create
+        [Authorize]
         public ActionResult Create()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity;
+                ViewBag.Name = user.Name;
+
+                ViewBag.isAdmin = "No";
+
+                if (isAdminUser())
+                {
+                    ViewBag.isAdmin = "Yes";
+                }
+                return View();
+            }
+            else
+            {
+                ViewBag.Name = "Not Logged IN";
+            }
             return View();
         }
 
@@ -50,7 +70,12 @@ namespace AdAtTheRightTime.Controllers
         {
             if (ModelState.IsValid)
             {
+                var Id = User.Identity.GetUserId();
+                var currentUser = db.Users.Find(Id);
+
                 db.Businesses.Add(business);
+                db.SaveChanges();
+                currentUser.BusinessId = business.BusinessId;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -122,6 +147,25 @@ namespace AdAtTheRightTime.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public Boolean isAdminUser()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity;
+                ApplicationDbContext context = new ApplicationDbContext();
+                var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                var s = UserManager.GetRoles(user.GetUserId());
+                if (s[0].ToString().Contains("Admin"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
         }
     }
 }
