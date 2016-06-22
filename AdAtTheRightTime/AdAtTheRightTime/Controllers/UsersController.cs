@@ -1,6 +1,7 @@
 ﻿using AdAtTheRightTime.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,19 @@ namespace AdAtTheRightTime.Controllers
 {
     public class UsersController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationUserManager _userManager;
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
         // GET: Users
         [Authorize]
         public ActionResult Index()
@@ -53,6 +67,12 @@ namespace AdAtTheRightTime.Controllers
                 }
             }
             return false;
+        }
+        public ActionResult UserView(string id)
+        {
+            var user = db.Users.Find(id);
+            //var s = UserManager.GetRoles(user.Id);
+            return View(user);
         }
     }
 }

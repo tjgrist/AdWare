@@ -80,7 +80,7 @@ namespace AdAtTheRightTime.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("ViewProfileDetails", "Profiles");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -166,7 +166,16 @@ namespace AdAtTheRightTime.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
-                    return RedirectToAction("Index", "Users");
+                    var s = UserManager.GetRoles(user.Id);
+                    string role = s[0].ToString();
+                    if (role == "Business Admin")
+                    {
+                        return RedirectToAction("Create", "Businesses");
+                    }
+                    else
+                    {
+                        return RedirectToAction("userView", "Users", new {id = user.Id });
+                    }
                 }
                 var query = db.Roles.Where(x => !x.Name.Contains("Manager"));
                 ViewBag.Name = new SelectList(query.Where(x => !x.Name.Contains("Super Admin")).ToList(), "Name", "Name");

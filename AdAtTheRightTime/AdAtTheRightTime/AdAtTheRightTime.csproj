@@ -203,6 +203,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProfilesController.cs" />
     <Compile Include="Controllers\QueriesController.cs" />
     <Compile Include="Controllers\RelationshipsController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
@@ -218,6 +219,10 @@
     <Compile Include="Migrations\201606212233568_changed to nullable business id.cs" />
     <Compile Include="Migrations\201606212233568_changed to nullable business id.Designer.cs">
       <DependentUpon>201606212233568_changed to nullable business id.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606221653297_tuesday.cs" />
+    <Compile Include="Migrations\201606221653297_tuesday.Designer.cs">
+      <DependentUpon>201606221653297_tuesday.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
@@ -307,9 +312,11 @@
     <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\Businesses\Index.cshtml" />
     <Content Include="Views\Businesses\Create.cshtml" />
+    <Content Include="Views\Users\UserView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Profiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -321,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606212233568_changed to nullable business id.resx">
       <DependentUpon>201606212233568_changed to nullable business id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606221653297_tuesday.resx">
+      <DependentUpon>201606221653297_tuesday.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
