@@ -211,19 +211,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606212214137_initial.cs" />
-    <Compile Include="Migrations\201606212214137_initial.Designer.cs">
-      <DependentUpon>201606212214137_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606212233568_changed to nullable business id.cs" />
-    <Compile Include="Migrations\201606212233568_changed to nullable business id.Designer.cs">
-      <DependentUpon>201606212233568_changed to nullable business id.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606221653297_tuesday.cs" />
-    <Compile Include="Migrations\201606221653297_tuesday.Designer.cs">
-      <DependentUpon>201606221653297_tuesday.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Models\SaleViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -313,7 +300,6 @@
     <Content Include="Views\Businesses\Create.cshtml" />
     <Content Include="Views\Users\UserView.cshtml" />
     <Content Include="Views\Businesses\Edit.cshtml" />
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -323,18 +309,7 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
-<ItemGroup>
-    <EmbeddedResource Include="Migrations\201606212214137_initial.resx">
-      <DependentUpon>201606212214137_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606212233568_changed to nullable business id.resx">
-      <DependentUpon>201606212233568_changed to nullable business id.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606221653297_tuesday.resx">
-      <DependentUpon>201606221653297_tuesday.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-<PropertyGroup>
+  <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
