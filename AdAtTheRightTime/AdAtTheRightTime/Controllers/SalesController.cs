@@ -9,7 +9,7 @@ using WebApplication9.Models;
 
 namespace WebApplication9.Controllers
 {
-    public class OrdersController : Controller
+    public class SalesController : Controller
     {
         // GET: /Orders/
         public async Task<ActionResult> Index()
@@ -19,7 +19,7 @@ namespace WebApplication9.Controllers
             var instanceUrl = Session["InstanceUrl"].ToString();
 
             var client = new ForceClient(instanceUrl, accessToken, apiVersion);
-            var sales     = await client.QueryAsync<OrderViewModel>("SELECT id, OrderNumber FROM Order");
+            var sales     = await client.QueryAsync<SaleViewModel>("SELECT Name, Total__c FROM Sale__c");
 
             return View(sales.records);
         }
