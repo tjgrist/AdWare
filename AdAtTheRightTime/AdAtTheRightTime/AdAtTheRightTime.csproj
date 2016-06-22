@@ -307,7 +307,6 @@
     <Content Include="Views\Sales\Index.cshtml" />
     <Content Include="Views\Businesses\Index.cshtml" />
     <Content Include="Views\Businesses\Create.cshtml" />
->>>>>>> f20ebffd8abc58fb9e653f5a2059ee7297a41a7f
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
