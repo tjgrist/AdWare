@@ -59,6 +59,12 @@ namespace AdAtTheRightTime.Controllers
             ViewBag.Name = new SelectList(db.Businesses.Distinct().ToList(), "Name", "Name");
             return View();
         }
+        [HttpPost]
+        public ActionResult AddBusinesses(Business business)
+        {
+
+            return View();
+        }
         
     }
 }
