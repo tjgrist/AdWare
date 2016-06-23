@@ -54,15 +54,15 @@ namespace AdAtTheRightTime
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "844191459058528",
+               appSecret: "2e9a6831cf8285f10c1b2e564d5ade46");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "285702963273-qqvr2ht85lq3r20shh49bqqbhbbpvno3.apps.googleusercontent.com",
+                ClientSecret = "PMSD4oy-G6hHu62d_0D0vM25"
+            });
         }
     }
 }
