@@ -211,6 +211,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606221953524_jk.cs" />
+    <Compile Include="Migrations\201606221953524_jk.Designer.cs">
+      <DependentUpon>201606221953524_jk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606222228150_add.cs" />
+    <Compile Include="Migrations\201606222228150_add.Designer.cs">
+      <DependentUpon>201606222228150_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606231702253_uptoSpeed.cs" />
+    <Compile Include="Migrations\201606231702253_uptoSpeed.Designer.cs">
+      <DependentUpon>201606231702253_uptoSpeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Models\SaleViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -317,6 +330,17 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606221953524_jk.resx">
+      <DependentUpon>201606221953524_jk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606222228150_add.resx">
+      <DependentUpon>201606222228150_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606231702253_uptoSpeed.resx">
+      <DependentUpon>201606231702253_uptoSpeed.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
