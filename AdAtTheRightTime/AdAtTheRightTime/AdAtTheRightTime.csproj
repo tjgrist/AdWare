@@ -224,6 +224,14 @@
     <Compile Include="Migrations\201606221653297_tuesday.Designer.cs">
       <DependentUpon>201606221653297_tuesday.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606221953524_jk.cs" />
+    <Compile Include="Migrations\201606221953524_jk.Designer.cs">
+      <DependentUpon>201606221953524_jk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606222228150_add.cs" />
+    <Compile Include="Migrations\201606222228150_add.Designer.cs">
+      <DependentUpon>201606222228150_add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
@@ -311,10 +319,15 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\Businesses\Index.cshtml" />
-    <Content Include="Views\Businesses\Create.cshtml" />
     <Content Include="Views\Users\UserView.cshtml" />
     <Content Include="Views\Businesses\Edit.cshtml" />
-
+    <Content Include="Views\Businesses\AdminView.cshtml" />
+    <Content Include="Views\Businesses\ManagerView.cshtml" />
+    <Content Include="Views\Businesses\UserView.cshtml" />
+    <Content Include="Views\Queries\ViewQueries.cshtml" />
+    <Content Include="Views\Queries\Create.cshtml" />
+    <Content Include="Views\Queries\ChooseQuery.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -333,6 +346,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606221653297_tuesday.resx">
       <DependentUpon>201606221653297_tuesday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606221953524_jk.resx">
+      <DependentUpon>201606221953524_jk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606222228150_add.resx">
+      <DependentUpon>201606222228150_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,51 @@
+﻿@model AdAtTheRightTime.Models.Business
+
+@{
+    ViewBag.Title = "AdminView";
+}
+
+<h2>AdminView</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Name)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Industry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Industry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Promotion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Promotion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit Business Details", "Edit", new { id = Model.BusinessId }) |
+    @Html.ActionLink("View Saved Queries", "ViewQueries", "Queries", new { id = Model.BusinessId }, null) |
+    @Html.ActionLink("View Data", "ChooseQuery","Queries", new { id = Model.BusinessId }, null)
+</p>

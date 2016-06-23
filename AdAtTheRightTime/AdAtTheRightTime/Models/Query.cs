@@ -12,7 +12,7 @@ namespace AdAtTheRightTime.Models
         [Key]
         public int QueryId { get; set; }
         public string Queries { get; set; }
-        public int BusinessId { get; set; }
+        public int? BusinessId { get; set; }
         public Business Business { get; set; }
     }
 }

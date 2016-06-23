@@ -41,6 +41,7 @@ namespace AdAtTheRightTime.Controllers
 
             var user = User.Identity;
             var s = UserManager.GetRoles(user.GetUserId());
+            var currentUser = db.Users.Find(user.GetUserId());
             string role = s[0].ToString();
             switch (role)
             {

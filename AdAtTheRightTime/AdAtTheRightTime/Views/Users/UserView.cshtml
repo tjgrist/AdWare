@@ -1,5 +1,4 @@
 ﻿@using Microsoft.AspNet.Identity
-@model AdAtTheRightTime.Models.ApplicationUser
 
 @{
     ViewBag.Title = "userView";
@@ -11,8 +10,5 @@
     <h4>Hello <strong>@User.Identity.GetUserName()</strong></h4>
 
 </div>
-<p>
-     |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
 

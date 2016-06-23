@@ -66,7 +66,7 @@ namespace AdAtTheRightTime.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BusinessId,City,Name,Industry")] Business business)
+        public ActionResult Create([Bind(Include = "BusinessId,City,Name,Industry,Description,Promotion")] Business business)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace AdAtTheRightTime.Controllers
                 db.SaveChanges();
                 currentUser.BusinessId = business.BusinessId;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("AdminView", new {id = business.BusinessId});
             }
 
             return View(business);
@@ -103,7 +103,7 @@ namespace AdAtTheRightTime.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BusinessId,City,Name,Industry")] Business business)
+        public ActionResult Edit([Bind(Include = "BusinessId,City,Name,Industry,Description,Promotion")] Business business)
         {
             var currentUser = db.Users.Find(User.Identity.GetUserId());
             if (currentUser.BusinessId == business.BusinessId)
@@ -113,7 +113,7 @@ namespace AdAtTheRightTime.Controllers
                     db.Entry(business).State = EntityState.Modified;
                     db.SaveChanges();
                     ViewBag.Message = "Registered your business.";
-                    return RedirectToAction("Index");
+                    return RedirectToAction("AdminView");
                 }
                 return View(business);
             }
@@ -174,5 +174,51 @@ namespace AdAtTheRightTime.Controllers
             }
             return false;
         }
+        public ActionResult AdminView()
+        {
+            var Id = User.Identity.GetUserId();
+            var currentUser = db.Users.Find(Id);
+            var id  = currentUser.BusinessId;
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Business business = db.Businesses.Find(id);
+            if (business == null)
+            {
+                return HttpNotFound();
+            }
+            return View(business);
+        }
+        public ActionResult ManagerView()
+        {
+            var Id = User.Identity.GetUserId();
+            var currentUser = db.Users.Find(Id);
+            var id = currentUser.BusinessId;
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Business business = db.Businesses.Find(id);
+            if (business == null)
+            {
+                return HttpNotFound();
+            }
+            return View(business);
+        }
+        public ActionResult UserView(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Business business = db.Businesses.Find(id);
+            if (business == null)
+            {
+                return HttpNotFound();
+            }
+            return View(business);
+        }
+
     }
 }
