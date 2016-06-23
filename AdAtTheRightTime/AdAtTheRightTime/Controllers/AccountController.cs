@@ -174,6 +174,7 @@ namespace AdAtTheRightTime.Controllers
                         return RedirectToAction("Create", "Businesses");
                     }
                     else
+<<<<<<< HEAD
                     {
                         return RedirectToAction("userView", "Users", new {id = user.Id });
                     }
