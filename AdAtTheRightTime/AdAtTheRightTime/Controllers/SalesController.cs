@@ -39,7 +39,7 @@ namespace AdAtTheRightTime.Controllers
             {
                 ViewBag.Name = "Not Logged IN";
             }
-            return View();
+            return View(sales.records);
 
         }
         public Boolean isAdminUser()
