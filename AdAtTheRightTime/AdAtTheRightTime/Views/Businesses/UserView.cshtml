@@ -1,13 +1,14 @@
-﻿@model AdAtTheRightTime.Models.Business
+﻿@using Microsoft.AspNet.Identity
+@model AdAtTheRightTime.Models.Business
 
 @{
     ViewBag.Title = "UserView";
 }
 
-<h2>UserView</h2>
+<h2>@Html.DisplayFor(model => model.Name)</h2>
 
 <div>
-    <h4>@Html.DisplayFor(model => model.Name)</h4>
+    <h4>@Html.DisplayFor(model => model.Description)</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -27,14 +28,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Promotion)
         </dt>
 
@@ -44,6 +37,17 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Back to your page", "UserView","Users")
-</p>
+@if (Request.IsAuthenticated)
+{
+    <div>
+        @Html.ActionLink("Back to your page", "UserView", "Users") |
+        @Html.ActionLink("Like  " + Model.Name, "CreateRelationship", "Relationships", new {id = Model.BusinessId}, null)
+    </div>
+}
+else
+{
+    <div>
+        @Html.ActionLink("Log in to Like this Business", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    </div>
+}
+

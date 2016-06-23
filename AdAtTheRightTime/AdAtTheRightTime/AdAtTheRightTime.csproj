@@ -223,6 +223,10 @@
     <Compile Include="Migrations\201606231702253_uptoSpeed.Designer.cs">
       <DependentUpon>201606231702253_uptoSpeed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606231933157_changeRelationshipModel.cs" />
+    <Compile Include="Migrations\201606231933157_changeRelationshipModel.Designer.cs">
+      <DependentUpon>201606231933157_changeRelationshipModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Models\SaleViewModel.cs" />
@@ -320,8 +324,9 @@
     <Content Include="Views\Queries\ChooseQuery.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\Profiles\AddBusinesses.cshtml" />
-    <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\Settings\RegisterManager.cshtml" />
+    <Content Include="Views\Businesses\ViewLikedBusinesses.cshtml" />
+    <Content Include="Views\Shared\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -340,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606231702253_uptoSpeed.resx">
       <DependentUpon>201606231702253_uptoSpeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606231933157_changeRelationshipModel.resx">
+      <DependentUpon>201606231933157_changeRelationshipModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

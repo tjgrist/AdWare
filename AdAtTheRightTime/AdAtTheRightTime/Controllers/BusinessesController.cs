@@ -21,6 +21,14 @@ namespace AdAtTheRightTime.Controllers
         {
             return View(db.Businesses.ToList());
         }
+        public ActionResult ViewLikedBusinesses()
+        {
+            var userId = User.Identity.GetUserId();
+            var Businessids = from relationship in db.Relationships where relationship.UserId == userId select relationship.BusinessId;
+            List<Business> likedBusinesses = new List<Business>();          
+            likedBusinesses = db.Businesses.Where(x => Businessids.ToList().Contains(x.BusinessId)).ToList();
+            return View(likedBusinesses);
+        }
 
         // GET: Businesses/Details/5
         public ActionResult Details(int? id)

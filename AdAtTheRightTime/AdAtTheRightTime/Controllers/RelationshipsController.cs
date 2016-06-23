@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AdAtTheRightTime.Models;
+using Microsoft.AspNet.Identity;
 
 namespace AdAtTheRightTime.Controllers
 {
@@ -37,7 +38,7 @@ namespace AdAtTheRightTime.Controllers
         }
 
         // GET: Relationships/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
             ViewBag.BusinessId = new SelectList(db.Businesses, "BusinessId", "City");
             return View();
@@ -59,6 +60,16 @@ namespace AdAtTheRightTime.Controllers
 
             ViewBag.BusinessId = new SelectList(db.Businesses, "BusinessId", "City", relationships.BusinessId);
             return View(relationships);
+        }
+        public ActionResult CreateRelationship(int? id)
+        {
+            var userId = User.Identity.GetUserId();
+            Relationships relationship = new Relationships();
+            relationship.UserId = userId;
+            relationship.BusinessId = id;
+            db.Relationships.Add(relationship);
+            db.SaveChanges();
+            return RedirectToAction("ViewLikedBusinesses", "Businesses");
         }
 
         // GET: Relationships/Edit/5
