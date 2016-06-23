@@ -211,6 +211,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606231702498_initial.cs" />
+    <Compile Include="Migrations\201606231702498_initial.Designer.cs">
+      <DependentUpon>201606231702498_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Models\SaleViewModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -297,15 +302,9 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Sales\Index.cshtml" />
     <Content Include="Views\Businesses\Index.cshtml" />
+    <Content Include="Views\Businesses\Create.cshtml" />
     <Content Include="Views\Users\UserView.cshtml" />
     <Content Include="Views\Businesses\Edit.cshtml" />
-    <Content Include="Views\Businesses\AdminView.cshtml" />
-    <Content Include="Views\Businesses\ManagerView.cshtml" />
-    <Content Include="Views\Businesses\UserView.cshtml" />
-    <Content Include="Views\Queries\ViewQueries.cshtml" />
-    <Content Include="Views\Queries\Create.cshtml" />
-    <Content Include="Views\Queries\ChooseQuery.cshtml" />
-    <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\Profiles\AddBusinesses.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\Settings\RegisterManager.cshtml" />
@@ -317,6 +316,11 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606231702498_initial.resx">
+      <DependentUpon>201606231702498_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,4 @@
-
+﻿
 @{
     ViewBag.Title = "Index";
 }
@@ -11,6 +11,7 @@
 }
 else
 {
-    <h2>Only Business Admins can add Managers.</h2>
+    <h4>Hi, @User.Identity.Name - Only Business Admins can add Managers.</h4>
+    @Html.ActionLink("See Active Businesses", "Index", "Businesses")
 }
 
