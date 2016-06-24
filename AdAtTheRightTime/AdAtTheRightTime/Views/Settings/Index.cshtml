@@ -7,11 +7,16 @@
 
 @if (ViewBag.allowManagerAdd == "Yes")
 {
-@Html.ActionLink("Add a Manager", "RegisterManager", "Settings")
+    <div>
+        @Html.ActionLink("Add a Manager", "RegisterManager", "Settings")
+    </div>
+    <div>
+        @Html.ActionLink("Create a New Query", "Create", "Queries")
+    </div>
 }
 else
 {
-    <h4>Hi, @User.Identity.Name - Only Business Admins can add Managers.</h4>
+    <h4>Hi, @User.Identity.Name - Only Business Admins can add Managers or Create a new Query.</h4>
     @Html.ActionLink("See Active Businesses", "Index", "Businesses")
 }
 

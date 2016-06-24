@@ -4,10 +4,10 @@
     ViewBag.Title = "AdminView";
 }
 
-<h2>AdminView</h2>
+<h2>Business Administrator View</h2>
 
 <div>
-    <h4>@Html.DisplayFor(model => model.Name)</h4>
+    <h4>Your business: @Html.DisplayFor(model => model.Name)</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -46,6 +46,8 @@
 </div>
 <p>
     @Html.ActionLink("Edit Business Details", "Edit", new { id = Model.BusinessId }) |
-    @Html.ActionLink("View Saved Queries", "ViewQueries", "Queries", new { id = Model.BusinessId }, null) |
-    @Html.ActionLink("View Data", "ChooseQuery","Queries", new { id = Model.BusinessId }, null)
+    @Html.ActionLink("View Saved Queries", "ViewQueries", "Queries") |
+    @Html.ActionLink("View Data", "ChooseQuery","Queries") |
+    @Html.ActionLink("View Business Settings", "Index", "Settings") |
+    @Html.ActionLink("Change your Account Settings", "Index", "Manage")
 </p>

@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201606231702498_initial.Designer.cs">
       <DependentUpon>201606231702498_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606241437436_post merge with joe Fri.cs" />
+    <Compile Include="Migrations\201606241437436_post merge with joe Fri.Designer.cs">
+      <DependentUpon>201606241437436_post merge with joe Fri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Models\SaleViewModel.cs" />
@@ -576,8 +580,8 @@
     <Content Include="Views\Users\UserView.cshtml" />
     <Content Include="Views\Businesses\Edit.cshtml" />
     <Content Include="Views\Profiles\AddBusinesses.cshtml" />
-    <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\Settings\RegisterManager.cshtml" />
+    <Content Include="Views\Businesses\ViewLikedBusinesses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -590,6 +594,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606231702498_initial.resx">
       <DependentUpon>201606231702498_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606241437436_post merge with joe Fri.resx">
+      <DependentUpon>201606241437436_post merge with joe Fri.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
