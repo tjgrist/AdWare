@@ -260,6 +260,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606231702498_initial.cs" />
+    <Compile Include="Migrations\201606231702498_initial.Designer.cs">
+      <DependentUpon>201606231702498_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606241437436_post merge with joe Fri.cs" />
+    <Compile Include="Migrations\201606241437436_post merge with joe Fri.Designer.cs">
+      <DependentUpon>201606241437436_post merge with joe Fri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Tools\AppFlowMetadata.cs" />
     <Compile Include="Tools\DataPoint.cs" />
@@ -352,6 +361,9 @@
     <Content Include="Views\Businesses\Create.cshtml" />
     <Content Include="Views\Users\UserView.cshtml" />
     <Content Include="Views\Businesses\Edit.cshtml" />
+    <Content Include="Views\Profiles\AddBusinesses.cshtml" />
+    <Content Include="Views\Settings\RegisterManager.cshtml" />
+    <Content Include="Views\Businesses\ViewLikedBusinesses.cshtml" />
     <Content Include="Views\Sales\Chart.cshtml" />
     <Content Include="Views\Sales\Index.cshtml" />
     <Content Include="Views\Sales\Create.cshtml" />
@@ -364,10 +376,19 @@
     <Folder Include="Views\AuthCallback\" />
     <Folder Include="Views\Drive\" />
     <Folder Include="Views\Profiles\" />
-  </ItemGroup>
+    <Folder Include="Views\Relationships\" />
+</ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606231702498_initial.resx">
+      <DependentUpon>201606231702498_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606241437436_post merge with joe Fri.resx">
+      <DependentUpon>201606241437436_post merge with joe Fri.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

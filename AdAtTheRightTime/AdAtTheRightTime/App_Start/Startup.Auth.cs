@@ -54,9 +54,9 @@ namespace AdAtTheRightTime
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "844191459058528",
+               appSecret: "2e9a6831cf8285f10c1b2e564d5ade46");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

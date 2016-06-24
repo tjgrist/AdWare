@@ -17,7 +17,7 @@ namespace AdAtTheRightTime.Controllers
 {
     public class SalesController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+		private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: GoogleTrends
         public ActionResult Index()
@@ -112,6 +112,7 @@ namespace AdAtTheRightTime.Controllers
         }
     
     public async Task<ActionResult> SalesForce()
+
         {
             var accessToken = Session["AccessToken"].ToString();
             var apiVersion = Session["ApiVersion"].ToString();
@@ -136,7 +137,8 @@ namespace AdAtTheRightTime.Controllers
             {
                 ViewBag.Name = "Not Logged IN";
             }
-            return View();
+
+            return View(sales.records);
 
         }
         public Boolean isAdminUser()
@@ -154,7 +156,7 @@ namespace AdAtTheRightTime.Controllers
                 else
                 {
                     return false;
-                }
+				}
             }
             return false;
         }

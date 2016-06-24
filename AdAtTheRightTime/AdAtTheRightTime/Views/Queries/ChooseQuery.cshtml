@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AdAtTheRightTime.Models.Query>
+
+@{
+    ViewBag.Title = "ChooseQuery";
+}
+
+<h2>Choose A Query</h2>
+
+@if (ViewBag.Message == "empty")
+{
+    <table class="table">
+        <tr>No Saved Queries</tr>
+    </table>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Queries)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Queries)
+                    <p>choose this query(this will be a link)</p>
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+@if (ViewBag.Role == "Business Admin")
+{
+    <div>
+        @Html.ActionLink("Create a New Query", "Create") |
+        @Html.ActionLink("Back to Business", "AdminView", "Businesses") 
+    </div>
+}
+else
+{
+    <div>
+        @Html.ActionLink("Back to Business", "ManagerView", "Businesses")
+    </div>
+}
