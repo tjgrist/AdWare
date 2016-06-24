@@ -1,0 +1,20 @@
+﻿@{
+    List<DateTime> x = new List<DateTime>();
+    List<int> y = new List<int>();
+    foreach (var item in Model)
+    {
+        DateTime date = Convert.ToDateTime(item.Name);
+        int totalNumber = Convert.ToInt32(item.Total__c);
+        x.Add(date);
+        y.Add(totalNumber);
+    }
+
+    var myChart = new Chart(width: 600, height: 400).AddTitle("Comparison Chart");
+
+    myChart.AddSeries(
+        chartType: "Line",
+        name: "Sales",
+        xValue: x,
+        yValues: y);
+    myChart.Write();
+}
