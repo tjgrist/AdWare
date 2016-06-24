@@ -4,15 +4,8 @@
     ViewBag.Title = "ViewLikedBusinesses";
 }
 
-<h2>ViewLikedBusinesses</h2>
-
 
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-    </tr>
 
 @foreach (var item in Model) {
     <tr>
@@ -27,6 +20,4 @@
 }
 
 </table>
-
-@Html.ActionLink("Back to your page", "UserView", "Users")
  
