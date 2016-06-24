@@ -3,7 +3,7 @@ namespace AdAtTheRightTime.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class _new : DbMigration
     {
         public override void Up()
         {
