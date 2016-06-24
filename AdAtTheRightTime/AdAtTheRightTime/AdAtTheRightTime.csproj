@@ -640,14 +640,16 @@
     <Content Include="Views\Sales\Delete.cshtml" />
     <Content Include="Views\Sales\Details.cshtml" />
     <Content Include="Views\Sales\Edit.cshtml" />
+    <Content Include="Views\Businesses\AdminView.cshtml" />
+    <Content Include="Views\Businesses\ManagerView.cshtml" />
+    <Content Include="Views\Businesses\UserView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AuthCallback\" />
     <Folder Include="Views\Drive\" />
-    <Folder Include="Views\Profiles\" />
     <Folder Include="Views\Relationships\" />
-</ItemGroup>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
