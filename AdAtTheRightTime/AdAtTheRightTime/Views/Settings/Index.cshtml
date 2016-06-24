@@ -3,12 +3,18 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Settings</h2>
+<h2>Your Business Settings</h2>
 
 @if (ViewBag.allowManagerAdd == "Yes")
 {
     <div>
+         @Html.Action("ViewManagers", "Businesses")
+    </div>
+    <div>
         @Html.ActionLink("Add a Manager", "RegisterManager", "Settings")
+    </div>
+    <div>
+        @Html.Action("ViewQueries", "Queries")
     </div>
     <div>
         @Html.ActionLink("Create a New Query", "Create", "Queries")
@@ -17,6 +23,10 @@
 else
 {
     <h4>Hi, @User.Identity.Name - Only Business Admins can add Managers or Create a new Query.</h4>
-    @Html.ActionLink("See Active Businesses", "Index", "Businesses")
+    @Html.ActionLink("Back to Business", "MangerView", "Businesses")
 }
+<div>
+    @Html.ActionLink("Back to Business", "AdminView", "Businesses")
+</div>
+
 

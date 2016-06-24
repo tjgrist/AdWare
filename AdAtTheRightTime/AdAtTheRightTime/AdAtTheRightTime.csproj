@@ -267,9 +267,9 @@
     <Compile Include="Migrations\201606231702498_initial.Designer.cs">
       <DependentUpon>201606231702498_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606241437436_post merge with joe Fri.cs" />
-    <Compile Include="Migrations\201606241437436_post merge with joe Fri.Designer.cs">
-      <DependentUpon>201606241437436_post merge with joe Fri.cs</DependentUpon>
+    <Compile Include="Migrations\201606241925407_update.cs" />
+    <Compile Include="Migrations\201606241925407_update.Designer.cs">
+      <DependentUpon>201606241925407_update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
@@ -643,6 +643,11 @@
     <Content Include="Views\Businesses\AdminView.cshtml" />
     <Content Include="Views\Businesses\ManagerView.cshtml" />
     <Content Include="Views\Businesses\UserView.cshtml" />
+    <Content Include="Views\Queries\ChooseQuery.cshtml" />
+    <Content Include="Views\Queries\Create.cshtml" />
+    <Content Include="Views\Queries\ViewQueries.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\Businesses\ViewManagers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -658,8 +663,8 @@
     <EmbeddedResource Include="Migrations\201606231702498_initial.resx">
       <DependentUpon>201606231702498_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606241437436_post merge with joe Fri.resx">
-      <DependentUpon>201606241437436_post merge with joe Fri.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606241925407_update.resx">
+      <DependentUpon>201606241925407_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -9,32 +9,8 @@
 <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=pizza+milwaukee+wi,+pizza+madison+wi&tz=Etc/GMT%2B5&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=600&h=380"></script></div>
 <div><img src="Sales/Chart" /></div>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create a New Search String", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Business.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Queries)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Business.City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Queries)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "Details", new { id=item.QueryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.QueryId })
-        </td>
-    </tr>
-}
-
-</table>
+<div>
+    @Html.Action("ChooseQuery", "Queries")
+</div>

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<AdAtTheRightTime.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "ViewManagers";
+}
+
+<h2>Current Managers</h2>
+
+<table class="table">
+
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+
+
+    </tr>
+}
+
+</table>

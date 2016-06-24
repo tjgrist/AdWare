@@ -227,6 +227,16 @@ namespace AdAtTheRightTime.Controllers
             }
             return View(business);
         }
+        public ActionResult ViewManagers()
+        {
+            var Bid= User.Identity.GetUserId();
+            var currentUser = db.Users.Find(Bid);
+            int? id = currentUser.BusinessId;
+            var managers = db.Users.Where(x => x.BusinessId == id).ToList();
+            var managersInBusiness = managers.Where(x => x.Id != Bid).ToList();
+            return View(managersInBusiness);
+
+        }
 
     }
 }

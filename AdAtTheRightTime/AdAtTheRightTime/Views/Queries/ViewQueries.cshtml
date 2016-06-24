@@ -4,12 +4,12 @@
     ViewBag.Title = "ViewQueries";
 }
 
-<h2>ViewQueries</h2>
+<h2>Saved Search Strings</h2>
 
 @if (ViewBag.Message == "empty")
 {
     <table class="table">
-        <tr>No Saved Queries</tr>
+        <tr>No Saved Search Strings</tr>
     </table>
 }
 else
@@ -33,21 +33,7 @@ else
 
     </table>
 }
-@if (ViewBag.Role == "Business Admin")
-{
-    <div>
-        @Html.ActionLink("Create a New Query", "Create") |
-        @Html.ActionLink("Back to Business", "AdminView", "Businesses") |
-        @Html.ActionLink("Choose a Query with which to View Data", "ChooseQuery", "Queries")
-    </div>
-}
-else
-{
-    <div>
-        @Html.ActionLink("Back to Business", "ManagerView", "Businesses")
-        @Html.ActionLink("Choose a Query with which to View Data", "ChooseQuery", "Queries")
-    </div>
-}
+
 
 
        
