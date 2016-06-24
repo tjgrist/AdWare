@@ -214,7 +214,6 @@
     <Compile Include="Migrations\201606231702498_initial.cs" />
     <Compile Include="Migrations\201606231702498_initial.Designer.cs">
       <DependentUpon>201606231702498_initial.cs</DependentUpon>
->>>>>>> 2798d3820bcd302f341f331465b5bf7045428a3a
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
@@ -319,22 +318,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Migrations\201606221953524_jk.resx">
-      <DependentUpon>201606221953524_jk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606222228150_add.resx">
-      <DependentUpon>201606222228150_add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606231702253_uptoSpeed.resx">
-      <DependentUpon>201606231702253_uptoSpeed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606231933157_changeRelationshipModel.resx">
-      <DependentUpon>201606231933157_changeRelationshipModel.cs</DependentUpon>
-=======
     <EmbeddedResource Include="Migrations\201606231702498_initial.resx">
       <DependentUpon>201606231702498_initial.cs</DependentUpon>
->>>>>>> 2798d3820bcd302f341f331465b5bf7045428a3a
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
