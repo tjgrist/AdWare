@@ -92,7 +92,7 @@ namespace AdAtTheRightTime.Controllers
                 query.BusinessId = currentUser.BusinessId;
                 db.Queries.Add(query);
                 db.SaveChanges();
-                return RedirectToAction("ViewQueries",new {id = query.BusinessId });
+                return RedirectToAction("Index", "Sales");
             }
 
             ViewBag.BusinessId = new SelectList(db.Businesses, "BusinessId", "City", query.BusinessId);
