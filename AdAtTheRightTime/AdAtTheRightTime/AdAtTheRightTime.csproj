@@ -326,7 +326,6 @@
     <Content Include="Views\Profiles\AddBusinesses.cshtml" />
     <Content Include="Views\Settings\RegisterManager.cshtml" />
     <Content Include="Views\Businesses\ViewLikedBusinesses.cshtml" />
-    <Content Include="Views\Shared\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
