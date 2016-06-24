@@ -35,6 +35,6 @@ namespace AdAtTheRightTime.Models
             return new ApplicationDbContext();
         }
 
-        
+       
     }
 }

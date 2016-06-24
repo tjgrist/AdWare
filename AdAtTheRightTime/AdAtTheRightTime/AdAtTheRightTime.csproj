@@ -648,6 +648,7 @@
     <Content Include="Views\Queries\ViewQueries.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\Businesses\ViewManagers.cshtml" />
+    <Content Include="Views\Businesses\ViewConnectedUsers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
