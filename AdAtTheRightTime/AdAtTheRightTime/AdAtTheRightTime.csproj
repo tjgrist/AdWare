@@ -582,6 +582,7 @@
     <Content Include="Views\Profiles\AddBusinesses.cshtml" />
     <Content Include="Views\Settings\RegisterManager.cshtml" />
     <Content Include="Views\Businesses\ViewLikedBusinesses.cshtml" />
+    <Content Include="Views\Profiles\Cal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

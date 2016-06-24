@@ -68,6 +68,10 @@ namespace AdAtTheRightTime.Controllers
 
             return View();
         }
+        public ActionResult Cal()
+        {
+            return View();
+        }
         
     }
 }
