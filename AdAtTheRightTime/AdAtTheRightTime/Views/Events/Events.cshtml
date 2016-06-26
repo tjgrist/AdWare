@@ -1,0 +1,176 @@
+﻿
+@{
+    ViewBag.Title = "Events";
+}
+
+
+@{
+    ViewBag.Title = "Calendar";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HTML5 Event Calendar</title>
+    <link type="text/css" rel="stylesheet" href="media/layout.css" />
+
+    <link type="text/css" rel="stylesheet" href="~/Content/calendar_g.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/calendar_green.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/calendar_traditional.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/calendar_transparent.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/calendar_white.css" />
+
+    <!-- helper libraries -->
+    <script src="~/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery-2.2.4.min.js" type="text/javascript"></script>
+
+
+    <!-- daypilot libraries -->
+    <script src="~/Scripts/daypilot-all.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div id="header">
+        <div class="bg-help">
+            <div class="inBox">
+
+                <hr class="hidden" />
+            </div>
+        </div>
+    </div>
+    <div class="shadow"></div>
+    <div class="hideSkipLink">
+    </div>
+    <div class="main">
+
+        <div style="float:left; width: 160px;">
+            <div id="nav"></div>
+        </div>
+        <div style="margin-left: 160px;">
+
+            <div class="space">
+                Theme: <select id="theme">
+                    <option value="calendar_default">Default</option>
+                    <option value="calendar_white">White</option>
+                    <option value="calendar_g">Google-Like</option>
+                    <option value="calendar_green">Green</option>
+                    <option value="calendar_traditional">Traditional</option>
+                    <option value="calendar_transparent">Transparent</option>
+                </select>
+            </div>
+
+            <div id="dp"></div>
+        </div>
+
+        <script type="text/javascript">
+
+                var nav = new DayPilot.Navigator("nav");
+                nav.showMonths = 3;
+                nav.skipMonths = 3;
+                nav.selectMode = "week";
+                nav.onTimeRangeSelected = function (args) {
+                    dp.startDate = args.day;
+                    dp.update();
+                    loadEvents();
+                };
+                nav.init();
+
+                var dp = new DayPilot.Calendar("dp");
+                dp.viewType = "Week";
+
+                dp.onEventMoved = function (args) {
+                    $.post("Events/move",
+                            {
+                                id: args.e.id(),
+                                newStart: args.newStart.toString(),
+                                newEnd: args.newEnd.toString()
+                            },
+                            function () {
+                                console.log("Moved.");
+                            });
+                };
+
+                dp.onEventResized = function (args) {
+                    $.post("Events/resize",
+                            {
+                                id: args.e.id(),
+                                newStart: args.newStart.toString(),
+                                newEnd: args.newEnd.toString()
+                            },
+                            function () {
+                                console.log("Resized.");
+                            });
+                };
+
+                // event creating
+                dp.onTimeRangeSelected = function (args) {
+                    var name = prompt("New event name:", "Event");
+                    dp.clearSelection();
+                    if (!name) return;
+
+                    $.post("Events/create",
+                    {
+                        start: args.start.toString(),
+                        end: args.end.toString(),
+                        name: name
+                    },
+                    function (data) {
+                        var e = new DayPilot.Event({
+                            start: args.start,
+                            end: args.end,
+                            id: data.id,
+                            resource: args.resource,
+                            text: name
+                        });
+                        dp.events.add(e);
+
+                    });
+
+                };
+
+                dp.onEventClick = function (args) {
+                    alert("clicked: " + args.e.id());
+                };
+
+                dp.init();
+
+                loadEvents();
+
+                function loadEvents() {
+                    var start = dp.visibleStart();
+                    var end = dp.visibleEnd();
+
+                    $.post("Events/Events",
+                    {
+                        start: start.toString(),
+                        end: end.toString()
+                    },
+                    function (data) {
+                        //console.log(data);
+                        dp.events.list = data;
+                        dp.update();
+                    });
+                }
+
+        </script>
+
+        <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#theme").change(function (e) {
+                        dp.theme = this.value;
+                        dp.update();
+                    });
+                });
+        </script>
+
+    </div>
+    <div class="clear">
+    </div>
+</body>
+</html>
+
+
+
