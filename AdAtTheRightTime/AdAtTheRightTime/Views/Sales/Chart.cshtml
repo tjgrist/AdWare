@@ -1,23 +1,28 @@
 ﻿@{
-    SortedDictionary<DateTime, Double> DataPointsSansOneYear = new SortedDictionary<DateTime, Double>();
-
-    foreach (var item in Model)
+    try
     {
-        DateTime date = Convert.ToDateTime(item.Name);
-        Double totalNumber = Convert.ToDouble (item.Total__c);
-        if (date > DateTime.Today.AddYears(-1).AddDays(-30)){
-            DataPointsSansOneYear.Add(date, totalNumber);
+        List<DateTime> x = new List<DateTime>();
+        List<int> y = new List<int>();
+        foreach (var item in Model)
+        {
+            DateTime date = Convert.ToDateTime(item.Name);
+            int totalNumber = Convert.ToInt32(item.Total__c);
+            x.Add(date);
+            y.Add(totalNumber);
         }
 
-    }
-    var myChart = new Chart(width: 600, height: 400).AddTitle("Comparison Chart");
-    myChart.AddSeries(
-        chartType: "Line",
-        name: "Sales",
+        var myChart = new Chart(width: 600, height: 400).AddTitle("Comparison Chart");
 
-        xValue: DataPointsSansOneYear.Keys,
-        yValues: DataPointsSansOneYear.Values);
-    myChart.SetXAxis("Date",DateTime.Today.AddYears(-1).AddDays(-30).ToOADate());
-    myChart.SetYAxis("Sales in $");
-    myChart.Write();
+        myChart.AddSeries(
+            chartType: "Line",
+            name: "Sales",
+            xValue: x,
+            yValues: y);
+        myChart.Write();
+    }
+    catch
+    {
+        var myChart = new Chart(width: 600, height: 400).AddTitle("No data Available Try Logging Into Salesforce");
+        myChart.Write();
+    }
 }
