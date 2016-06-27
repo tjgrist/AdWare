@@ -111,36 +111,7 @@ namespace AdAtTheRightTime.Controllers
             base.Dispose(disposing);
         }
     
-    public async Task<ActionResult> SalesForce()
-
-        {
-            var accessToken = Session["AccessToken"].ToString();
-            var apiVersion = Session["ApiVersion"].ToString();
-            var instanceUrl = Session["InstanceUrl"].ToString();
-
-            var client = new ForceClient(instanceUrl, accessToken, apiVersion);
-            var sales = await client.QueryAsync<SaleViewModel>("SELECT Name, Total__c FROM Sale__c");
-            if (User.Identity.IsAuthenticated)
-            {
-                var user = User.Identity;
-                ViewBag.Name = user.Name;
-
-                ViewBag.isAdmin = "No";
-
-                if (isAdminUser())
-                {
-                    ViewBag.isAdmin = "Yes";
-                }
-                return View(sales.records);
-            }
-            else
-            {
-                ViewBag.Name = "Not Logged IN";
-            }
-
-            return View(sales.records);
-
-        }
+    
         public Boolean isAdminUser()
         {
             if (User.Identity.IsAuthenticated)
