@@ -649,6 +649,7 @@
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\Businesses\ViewManagers.cshtml" />
     <Content Include="Views\Businesses\ViewConnectedUsers.cshtml" />
+    <Content Include="Views\Businesses\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,16 +1,25 @@
 ﻿@model IEnumerable<AdAtTheRightTime.Models.Query>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Sales Data";
 }
 
-<h2>Index</h2>
+<h2>Sales Data</h2>
 <div>
 <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=pizza+milwaukee+wi,+pizza+madison+wi&tz=Etc/GMT%2B5&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=600&h=380"></script></div>
 <div><img src="Sales/Chart" /></div>
-<p>
-    @Html.ActionLink("Create a New Search String", "Create", "Queries")
-</p>
 <div>
     @Html.Action("ChooseQuery", "Queries")
+</div>
+<div>
+    @Html.Action("Create", "Queries")
+</div>
+
+<div class="dhx_footer">
+
+    @Html.ActionLink("Back to Business", "AdminView", "Businesses") |
+    @Html.ActionLink("View Sales Data", "Index", "Sales") |
+    @Html.ActionLink("Add Managers", "Index", "Settings") |
+    @Html.ActionLink("Change your Account Settings", "Index", "Manage") |
+    @Html.ActionLink("View your calendar", "Cal", "Profiles")
 </div>

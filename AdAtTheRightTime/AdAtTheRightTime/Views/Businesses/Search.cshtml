@@ -1,0 +1,42 @@
+﻿@model IEnumerable<AdAtTheRightTime.Models.Business>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search for a Business</h2>
+
+<p>
+    @using (Html.BeginForm("Search","Businesses",FormMethod.Get))
+    {
+        <b>Search By:</b>
+            @Html.RadioButton("searchBy", "City", true)<text>City</text>
+            @Html.RadioButton("searchBy", "Industry")<text>Industry</text>
+            @Html.RadioButton("searchBy", "Name")<text>Name</text><br />
+            <br />
+
+            @Html.TextBox("search")<input type="submit" value="Search" />
+    }
+
+</p>
+@if (Model.Count() > 0)
+{
+    <table class="table">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Check em Out!", "Userview", "Businesses", new { id = item.BusinessId }, null)
+                </td>
+            </tr>
+        }
+
+    </table>
+    @Html.ActionLink("Back to your profile", "Userview","Users")
+}
+

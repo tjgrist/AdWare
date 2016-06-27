@@ -103,7 +103,7 @@ namespace AdAtTheRightTime.Controllers
                     //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
-                    return RedirectToAction("Index", "Settings");                 
+                    return View();                 
 
                 }
                 ViewBag.Name = new SelectList(db.Roles.Where(x => x.Name.Contains("Manager")).ToList(), "Name", "Name");

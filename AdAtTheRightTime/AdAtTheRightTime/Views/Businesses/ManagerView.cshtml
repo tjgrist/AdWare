@@ -4,10 +4,9 @@
     ViewBag.Title = "ManagerView";
 }
 
-<h2>Manager Profile</h2>
 
 <div>
-    <h4>Your Business: @Html.DisplayFor(model => model.Name)</h4>
+    <h2>@Html.DisplayFor(model => model.Name)</h2>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -48,7 +47,6 @@
     </div>
 </div>
 <p>
-    @Html.ActionLink("View Saved Queries", "ViewQueries", "Queries") |
-    @Html.ActionLink("View Data", "ChooseQuery", "Queries") |
+    @Html.ActionLink("View Sales Data", "Index", "Sales") |
     @Html.ActionLink("Change your Account Settings", "Index", "Manage")
 </p>

@@ -21,6 +21,21 @@ namespace AdAtTheRightTime.Controllers
         {
             return View(db.Businesses.ToList());
         }
+        public ActionResult Search(string searchBy, string search)
+        {
+            if(searchBy == "City")
+            {
+                return View(db.Businesses.Where(x => x.City == search).ToList());
+            }
+            else if(searchBy == "Industry")
+            {
+                return View(db.Businesses.Where(x => x.Industry == search).ToList());
+            }
+            else
+            {
+                return View(db.Businesses.Where(x => x.Name == search).ToList());
+            }
+        }
         public ActionResult ViewLikedBusinesses()
         {
             var userId = User.Identity.GetUserId();
