@@ -27,6 +27,8 @@ else
 
                 <td>
                     @Html.DisplayFor(modelItem => item.Queries)
+                </td>   
+                <td>
                     @if (ViewBag.Role == "Business Admin")
                     {
                         @Html.ActionLink("Delete", "Delete", "Queries", new { id = item.QueryId }, null)

@@ -21,6 +21,21 @@ namespace AdAtTheRightTime.Controllers
         {
             return View(db.Businesses.ToList());
         }
+        public ActionResult Search(string searchBy, string search)
+        {
+            if(searchBy == "City")
+            {
+                return View(db.Businesses.Where(x => x.City == search).ToList());
+            }
+            else if(searchBy == "Industry")
+            {
+                return View(db.Businesses.Where(x => x.Industry == search).ToList());
+            }
+            else
+            {
+                return View(db.Businesses.Where(x => x.Name == search).ToList());
+            }
+        }
         public ActionResult ViewLikedBusinesses()
         {
             var userId = User.Identity.GetUserId();
@@ -28,6 +43,14 @@ namespace AdAtTheRightTime.Controllers
             List<Business> likedBusinesses = new List<Business>();          
             likedBusinesses = db.Businesses.Where(x => Businessids.ToList().Contains(x.BusinessId)).ToList();
             return View(likedBusinesses);
+        }
+        public ActionResult ViewConnectedUsers()
+        {
+            var Id = User.Identity.GetUserId();
+            var currentUser = db.Users.Find(Id);
+            var Userids = from relationship in db.Relationships where relationship.BusinessId == currentUser.BusinessId select relationship.UserId;
+            var connectedUsers = db.Users.Where(x => Userids.ToList().Contains(x.Id)).ToList();
+            return View(connectedUsers);
         }
 
         // GET: Businesses/Details/5

@@ -4,10 +4,10 @@
     ViewBag.Title = "AdminView";
 }
 
-<h2>Business Administrator View</h2>
+
 
 <div>
-    <h4>Your business: @Html.DisplayFor(model => model.Name)</h4>
+    <h2>@Html.DisplayFor(model => model.Name)</h2>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -43,11 +43,14 @@
         </dd>
 
     </dl>
+    <div>
+        @Html.Action("ViewConnectedUsers")
+    </div>
 </div>
-<p>
+<div class="dhx_footer">
     @Html.ActionLink("Edit Business Details", "Edit", new { id = Model.BusinessId }) |
     @Html.ActionLink("View Sales Data", "Index","Sales") |
-    @Html.ActionLink("View Business Settings", "Index", "Settings") |
+    @Html.ActionLink("Add Managers", "Index", "Settings") |
     @Html.ActionLink("Change your Account Settings", "Index", "Manage") |
-    @Html.ActionLink("View your calendar", "Cal", "Profiles")
+    @Html.ActionLink("View your calendar", "Calendar", "Profiles")
 </p>

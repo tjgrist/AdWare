@@ -69,7 +69,7 @@ namespace AdAtTheRightTime.Controllers
             relationship.BusinessId = id;
             db.Relationships.Add(relationship);
             db.SaveChanges();
-            return RedirectToAction("ViewLikedBusinesses", "Businesses");
+            return RedirectToAction("UserView", "Users");
         }
 
         // GET: Relationships/Edit/5

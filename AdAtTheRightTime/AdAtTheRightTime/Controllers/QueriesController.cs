@@ -83,7 +83,7 @@ namespace AdAtTheRightTime.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "QueryId,Queries")] Query query)
+        public void Create([Bind(Include = "QueryId,Queries")] Query query)
         {
             if (ModelState.IsValid)
             {
@@ -92,11 +92,11 @@ namespace AdAtTheRightTime.Controllers
                 query.BusinessId = currentUser.BusinessId;
                 db.Queries.Add(query);
                 db.SaveChanges();
-                return RedirectToAction("ViewQueries",new {id = query.BusinessId });
+                
             }
 
             ViewBag.BusinessId = new SelectList(db.Businesses, "BusinessId", "City", query.BusinessId);
-            return View(query);
+            
         }
 
         // GET: Queries/Edit/5
