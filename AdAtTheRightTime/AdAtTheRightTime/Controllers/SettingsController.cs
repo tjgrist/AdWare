@@ -82,7 +82,7 @@ namespace AdAtTheRightTime.Controllers
         [AllowAnonymous]
         public ActionResult RegisterManager()
         {
-            ViewBag.Name = new SelectList(db.Roles.Where(x => x.Name.Contains("Manager")).ToList(), "Name", "Name");
+            ViewBag.Name = new SelectList(db.Roles.Where(x => x.Name.Contains("Manager")).ToList(), "Name", "Name", "Business Manager");
             return View();
         }
 
@@ -106,7 +106,7 @@ namespace AdAtTheRightTime.Controllers
                     return View();                 
 
                 }
-                ViewBag.Name = new SelectList(db.Roles.Where(x => x.Name.Contains("Manager")).ToList(), "Name", "Name");
+                ViewBag.Name = new SelectList(db.Roles.Where(x => x.Name.Contains("Manager")).ToList(), "Name", "Name", "Business Manager");
             }
 
             // If we got this far, something failed, redisplay form
