@@ -277,6 +277,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Business.cs" />
+    <Compile Include="Models\QueryViewModel.cs" />
     <Compile Include="Tools\AppFlowMetadata.cs" />
     <Compile Include="Tools\DataPoint.cs" />
     <Compile Include="Tools\Graph.cs" />
