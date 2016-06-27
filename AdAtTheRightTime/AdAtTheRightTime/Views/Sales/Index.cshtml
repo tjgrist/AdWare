@@ -1,12 +1,13 @@
-﻿@model IEnumerable<AdAtTheRightTime.Models.Query>
+﻿@model List<AdAtTheRightTime.Models.QueryViewModel>
 
 @{
     ViewBag.Title = "Sales Data";
+    string queryBuiltString = Model[0].QueryBuiltString;
 }
 
 <h2>Sales Data</h2>
 <div>
-<script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=pizza+milwaukee+wi,+pizza+madison+wi&tz=Etc/GMT%2B5&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=600&h=380"></script></div>
+    <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=@queryBuiltString + &date=today+1-m&cmpt=q&tz=Etc/GMT%2B5&tz=Etc/GMT%2B5&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=500&h=330"></script></div>
 <div><img src="Sales/Chart" /></div>
 <div>
     @Html.Action("ChooseQuery", "Queries")

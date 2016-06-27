@@ -12,30 +12,57 @@ using WebApplication9.Models;
 using System.Data;
 using System.Data.Entity;
 using System.Net;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace AdAtTheRightTime.Controllers
 {
     public class SalesController : Controller
     {
 		private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationUserManager _userManager;
 
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
         // GET: GoogleTrends
         public ActionResult Index()
         {
-            var queries = db.Queries.Include(q => q.Business);
-            return View(queries.ToList());
-        }
-        public void queryQueries()
-        {
-
-            var userId = Convert.ToInt32(User.Identity.GetUserId());
-            foreach (Query query in db.Queries)
+            //var queries = db.Queries.Include(q => q.Business);
+            //return View(queries.ToList());
+            //
+            List<QueryViewModel> queryViewModelList = new List<QueryViewModel>();
+            var user = UserManager.FindById(User.Identity.GetUserId());
+            foreach (var item in db.Queries)
             {
-                if (query.BusinessId == userId)
+                if (user.BusinessId == item.BusinessId)
                 {
-
+                    QueryViewModel queryViewModel = new QueryViewModel();               
+                    queryViewModel.Queries = item.Queries;
+                    queryViewModel.BusinessId = item.BusinessId;
+                    queryViewModelList.Add(queryViewModel);
                 }
             }
+            try
+            {
+                queryViewModelList[0].QueryBuiltString = queryQueries();
+            }
+            catch
+            {
+                QueryViewModel defaultQueryViewModel = new QueryViewModel();
+                queryViewModelList.Add(defaultQueryViewModel);
+                queryViewModelList[0].Queries = "";
+                queryViewModelList[0].BusinessId = null;
+                queryViewModelList[0].QueryBuiltString = "";
+            }
+            return View(queryViewModelList);
         }
         // GET: GoogleTrends/Details/5
         public ActionResult Details(int? id)
@@ -159,6 +186,38 @@ namespace AdAtTheRightTime.Controllers
             return View();
 
         }
-        
+        public string queryQueries()
+        {
+            var user = UserManager.FindById(User.Identity.GetUserId());
+            List<string> queriesList = new List<string>();
+            int i = 1;
+            int j = 0;
+            string[] queryTransition = new string[] { ",+" };
+            foreach (Query query in db.Queries)
+            {
+                if (query.BusinessId == user.BusinessId)
+                {
+                    queriesList.Add(Convert.ToString(query.Queries));
+                }
+            }
+            List<string> queriesSemiBuiltList = new List<string>();
+            foreach (string query in queriesList)
+            {
+                queriesSemiBuiltList.Add(query.Replace(' ', '+'));
+                if (i < queriesList.Count)
+                {
+                    queriesSemiBuiltList[j] = queriesSemiBuiltList[j] + ",+";
+                }
+                i++;
+                j++;
+            }
+            string queriesBuiltString = "";
+            foreach (string query in queriesSemiBuiltList)
+            {
+                queriesBuiltString += query;
+            }
+            return queriesBuiltString;
+        }
+
     }
 }
